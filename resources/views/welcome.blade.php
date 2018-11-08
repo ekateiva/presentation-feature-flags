@@ -96,6 +96,12 @@
                     </div>
                 @endif
 
+                @if ($user ?? false)
+                    <div class="">
+                        Logged in as user with ID {{ $user->id }}
+                    </div>
+                @endif
+
             </div>
         </div>
     </body>

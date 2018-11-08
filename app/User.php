@@ -2,11 +2,12 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Jaspaul\LaravelRollout\Contracts\User as RolloutUser;
 
-class User extends Authenticatable
+class User extends Authenticatable implements RolloutUser
 {
     use Notifiable;
 
@@ -27,4 +28,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getRolloutIdentifier(): string
+    {
+        return (string) $this->id;
+    }
 }

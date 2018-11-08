@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Services\FeatureFlag\Feature;
-use App\Services\FeatureFlag\SystemTagFeature;
+use App\Services\FeatureFlag\RolloutFeature;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(Feature::class, SystemTagFeature::class);
+        $this->app->bind(Feature::class, RolloutFeature::class);
     }
 }
