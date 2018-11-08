@@ -8,7 +8,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $meetup = $this->getMeetupPlace();
+        $meetup = $this->getMeetupPlaceWrongMethod();
 
         return view('welcome')->with(compact('meetup'));
     }
