@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
+        <link rel="shortcut icon" type="image/png" href="/if_laravel-2048-black_167609.png"/>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -48,6 +49,11 @@
                 font-size: 84px;
             }
 
+            .sub-title {
+                font-size: 54px;
+                margin-bottom: 30px;
+            }
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -81,17 +87,15 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Laravel Meetup, Nov 2018
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                @if ($meetup ?? false)
+                    <div class="sub-title">
+                        {{ $meetup }}
+                    </div>
+                @endif
+
             </div>
         </div>
     </body>
