@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\FeatureFlag\ConfigFeature;
 use App\Services\FeatureFlag\Feature;
-use App\Services\FeatureFlag\RolloutFeature;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(Feature::class, RolloutFeature::class);
+        $this->app->bind(Feature::class, ConfigFeature::class);
     }
 }
